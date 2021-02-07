@@ -1,4 +1,4 @@
-# IDA edgehub
+# IDA idahub
 
 This repo is a quick way to get the entire TICK Stack spun up and working together. It uses [Docker](https://www.docker.com/) to spin up the full TICK stack in a connected fashion. This is heavily tested on MacOS and should mostly work on Linux and Windows.
 
@@ -6,14 +6,14 @@ To get started you need a running docker installation. If you don't have one, yo
 
 ### Running
 
-To run the `edgehub`, simply use the convenient cli:
+To run the `idahub`, simply use the convenient cli:
 
 ```bash
-$ ./edgehub
-edgehub commands:
-  up           -> spin up the edgehub environment (add -nightly to grab the latest nightly builds of InfluxDB and Chronograf)
-  down         -> tear down the edgehub environment
-  restart      -> restart the edgehub
+$ ./idahub
+idahub commands:
+  up           -> spin up the idahub environment (add -nightly to grab the latest nightly builds of InfluxDB and Chronograf)
+  down         -> tear down the idahub environment
+  restart      -> restart the idahub
   influxdb     -> attach to the influx cli
   flux         -> attach to the flux REPL
 
@@ -25,14 +25,14 @@ edgehub commands:
   rebuild-docs -> rebuild the documentation container to see updates
 ```
 
-To get started just run `./edgehub up`. You browser will open two tabs:
+To get started just run `./idahub up`. You browser will open two tabs:
 
 - `localhost:8888` - Chronograf's address. You will use this as a management UI for the full stack
 - `localhost:3010` - Documentation server. This contains a simple markdown server for tutorials and documentation.
 
-> NOTE: Make sure to stop any existing installations of `influxdb`, `kapacitor` or `chronograf`. If you have them running the edgehub will run into port conflicts and fail to properly start. In this case stop the existing processes and run `./edgehub restart`. Also make sure you are **not** using _Docker Toolbox_.
+> NOTE: Make sure to stop any existing installations of `influxdb`, `kapacitor` or `chronograf`. If you have them running the idahub will run into port conflicts and fail to properly start. In this case stop the existing processes and run `./idahub restart`. Also make sure you are **not** using _Docker Toolbox_.
 
-Once the edgehub launches, you should see your dashboard appear in your browser:
+Once the idahub launches, you should see your dashboard appear in your browser:
 
 ![Dashboard](./documentation/static/images/landing-page.png)
 
@@ -46,6 +46,6 @@ host, then check out the tutorials at `http://localhost:3010/tutorials`.
 
 If you are using the nightly builds and want to get started with Flux, make sure you check out the [Getting Started with Flux](./documentation/static/tutorials/flux-getting-started.md) tutorial.
 
-> Note: see [influx-stress](https://github.com/influxdata/influx-stress) to create data for your edgehub.
+> Note: see [influx-stress](https://github.com/influxdata/influx-stress) to create data for your idahub.
 
-![Dashboard](./documentation/static/images/edgehub-dashboard.png)
+![Dashboard](./documentation/static/images/idahub-dashboard.png)

@@ -12,7 +12,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-edgehub () {
+idahub () {
       if [ "$2" == "-nightly" ]; then
         source .env-nightlies
         echo "Using nightlies...removing old ones."
@@ -47,7 +47,7 @@ edgehub () {
         docker-compose exec telegraf /bin/bash
         ;;
       *)
-        echo "edgehub enter (influxdb||chronograf||kapacitor||telegraf)"
+        echo "idahub enter (influxdb||chronograf||kapacitor||telegraf)"
         ;;
     esac
   }
@@ -72,7 +72,7 @@ edgehub () {
         docker-compose logs -f telegraf
         ;;
       *)
-        echo "edgehub logs (influxdb||chronograf||kapacitor||telegraf)"
+        echo "idahub logs (influxdb||chronograf||kapacitor||telegraf)"
         ;;
     esac
   }
@@ -80,7 +80,7 @@ edgehub () {
   case $1 in
     up)
       echo "Spinning up Docker Images..."
-      echo "If this is your first time starting edgehub this might take a minute..."
+      echo "If this is your first time starting idahub this might take a minute..."
       docker-compose up -d --build
       echo "Opening tabs in browser..."
       sleep 3
@@ -95,13 +95,13 @@ edgehub () {
       fi
       ;;
     down)
-      echo "Stopping edgehub containers..."
+      echo "Stopping idahub containers..."
       docker-compose down
       ;;
     restart)
-      echo "Stopping all edgehub processes..."
+      echo "Stopping all idahub processes..."
       docker-compose down > /dev/null 2>&1
-      echo "Starting all edgehub processes..."
+      echo "Starting all idahub processes..."
       docker-compose up -d --build > /dev/null 2>&1
       echo "Services available!"
       ;;
@@ -110,10 +110,10 @@ edgehub () {
       rm -rf kapacitor/data influxdb/data chronograf/data
       ;;
     docker-clean)
-      echo "Stopping and removing running edgehub containers..."
+      echo "Stopping and removing running idahub containers..."
       docker-compose down
       echo "Removing TICK images..."
-      docker rmi edgehub_documentation influxdb:latest telegraf:latest kapacitor:latest chronograf:latest chrono_config:latest quay.io/influxdb/influxdb:nightly quay.io/influxdb/chronograf:nightly> /dev/null 2>&1
+      docker rmi idahub_documentation influxdb:latest telegraf:latest kapacitor:latest chronograf:latest chrono_config:latest quay.io/influxdb/influxdb:nightly quay.io/influxdb/chronograf:nightly> /dev/null 2>&1
       docker rmi $(docker images -f "dangling=true" -q)
       ;;
     influxdb)
@@ -126,7 +126,7 @@ edgehub () {
       ;;
     rebuild-docs)
       echo "Rebuilding documentation container..."
-      docker build -t edgehub_documentation documentation/ > /dev/null 2>&1
+      docker build -t idahub_documentation documentation/ > /dev/null 2>&1
       echo "Restarting..."
       docker-compose down > /dev/null 2>&1
       docker-compose up -d --build > /dev/null 2>&1
@@ -139,10 +139,10 @@ edgehub () {
       ;;
     *)
       cat <<-EOF
-edgehub commands:
-  up (-nightly)      -> spin up the edgehub environment (latest or nightlies specified in the companion file)
-  down               -> tear down the edgehub environment (latest or nightlies specified in the companion file)
-  restart (-nightly) -> restart the edgehub
+idahub commands:
+  up (-nightly)      -> spin up the idahub environment (latest or nightlies specified in the companion file)
+  down               -> tear down the idahub environment (latest or nightlies specified in the companion file)
+  restart (-nightly) -> restart the idahub
   influxdb           -> attach to the influx cli
   flux               -> attach to the flux REPL
 
@@ -158,5 +158,5 @@ EOF
 }
 
 pushd `dirname $0` > /dev/null
-    edgehub $@
+    idahub $@
 popd > /dev/null

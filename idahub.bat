@@ -1,5 +1,5 @@
 @ECHO OFF
-TITLE edgehub.bat - TICK edgehub
+TITLE idahub.bat - TICK idahub
 
 SET interactive=1
 SET COMPOSE_CONVERT_WINDOWS_PATHS=1
@@ -16,7 +16,7 @@ IF %ERRORLEVEL% == 0 SET interactive=0
 REM Enter attaches users to a shell in the desired container
 IF "%1"=="enter" (
     IF "%2"=="" (
-        ECHO edgehub enter ^(influxdb^|^|chronograf^|^|kapacitor^|^|telegraf^)
+        ECHO idahub enter ^(influxdb^|^|chronograf^|^|kapacitor^|^|telegraf^)
         GOTO End
     )
     IF "%2"=="influxdb" (
@@ -44,7 +44,7 @@ IF "%1"=="enter" (
 REM Logs streams the logs from the container to the shell
 IF "%1"=="logs" (
     IF "%2"=="" (
-        ECHO edgehub logs ^(influxdb^|^|chronograf^|^|kapacitor^|^|telegraf^)
+        ECHO idahub logs ^(influxdb^|^|chronograf^|^|kapacitor^|^|telegraf^)
         GOTO End
     )
     IF "%2"=="influxdb" (
@@ -73,7 +73,7 @@ IF "%1"=="logs" (
 IF "%1"=="up" (
     IF "%2"=="-nightly" (
         ECHO Spinning up nightly Docker Images...
-        ECHO If this is your first time starting edgehub this might take a minute...
+        ECHO If this is your first time starting idahub this might take a minute...
         SET TYPE=nightly
         SET INFLUXDB_TAG=nightly
         SET CHRONOGRAF_TAG=nightly
@@ -85,7 +85,7 @@ IF "%1"=="up" (
         GOTO End  
     ) ELSE (
         ECHO Spinning up latest, stable Docker Images...
-        ECHO If this is your first time starting edgehub this might take a minute...
+        ECHO If this is your first time starting idahub this might take a minute...
         docker-compose up -d --build
         ECHO Opening tabs in browser...
         timeout /t 3 /nobreak > NUL
@@ -96,15 +96,15 @@ IF "%1"=="up" (
 )
 
 IF "%1"=="down" (
-    ECHO Stopping and removing running edgehub containers...
+    ECHO Stopping and removing running idahub containers...
     docker-compose down
     GOTO End
 )
 
 IF "%1"=="restart" (
-    ECHO Stopping all edgehub processes...
+    ECHO Stopping all idahub processes...
     docker-compose down >NUL 2>NUL
-    ECHO Starting all edgehub processes...
+    ECHO Starting all idahub processes...
     docker-compose up -d --build >NUL 2>NUL
     ECHO Services available!
     GOTO End
@@ -117,7 +117,7 @@ IF "%1"=="delete-data" (
 )
 
 IF "%1"=="docker-clean" (
-    ECHO Stopping all running edgehub containers...
+    ECHO Stopping all running idahub containers...
     docker-compose down
     echo Removing TICK images...
     docker-compose down --rmi=all
@@ -138,17 +138,17 @@ IF "%1"=="flux" (
 
 IF "%1"=="rebuild-docs" (
     echo Rebuilding documentation container...
-    docker build -t edgehub_documentation documentation\  >NUL 2>NUL
+    docker build -t idahub_documentation documentation\  >NUL 2>NUL
     echo "Restarting..."
     docker-compose down >NUL 2>NUL
     docker-compose up -d --build >NUL 2>NUL
     GOTO End
 )
 
-ECHO edgehub commands:
-ECHO   up           -^> spin up the edgehub environment
-ECHO   down         -^> tear down the edgehub environment
-ECHO   restart      -^> restart the edgehub
+ECHO idahub commands:
+ECHO   up           -^> spin up the idahub environment
+ECHO   down         -^> tear down the idahub environment
+ECHO   restart      -^> restart the idahub
 ECHO   influxdb     -^> attach to the influx cli
 ECHO   flux         -^> attach to the flux REPL
 ECHO.

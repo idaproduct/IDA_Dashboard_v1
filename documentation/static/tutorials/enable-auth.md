@@ -3,7 +3,7 @@
 First you will need to create an [admin user](https://docs.influxdata.com/influxdb/v1.4/query_language/authentication_and_authorization/#authorization) on your influxdb instance:
 
 ```
-$ ./edgehub influxdb
+$ ./idahub influxdb
 ...
 > CREATE USER "stanley" WITH PASSWORD 'stellllAAAA' WITH ALL PRIVILEGES
 > SHOW USERS
@@ -34,10 +34,10 @@ Also make sure to add the credentials in the Chronograf instance:
 
 ![add creds to chronograf](../images/add-password-chronograf.png)
 
-Once those steps are completed then you need to restart the edgehub to ensure authentication is enforced:
+Once those steps are completed then you need to restart the idahub to ensure authentication is enforced:
 
 ```
-$ ./edgehub restart
+$ ./idahub restart
 Stopping all processes...
 Starting all processes...
 Services available!

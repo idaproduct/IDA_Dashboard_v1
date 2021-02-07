@@ -4,5 +4,5 @@
   "name": "My Kapacitor",
   "url": "http://kapacitor:9092",
   "active": true,
-  "organization": "edgehub_org"
+  "organization": "idahub_org"
 }

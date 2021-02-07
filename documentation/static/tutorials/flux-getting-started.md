@@ -2,16 +2,16 @@
 Flux is InfluxData's new data language designed for querying, analyzing, and acting on data stored in InfluxDB.
 Its takes the power of InfluxQL and the TICKscript and combines them into a single, unified data scripting language.
 
-## Using Flux with the edgehub
+## Using Flux with the idahub
 Starting with the 1.7 releases of Chronograf and InfluxDB, Flux is now completely integrated within 
-the [InfluxData edgehub](https://github.com/influxdata/edgehub).
+the [InfluxData idahub](https://github.com/influxdata/idahub).
 
 There will be ongoing updates and refinements made to the language and the implementation.  So, you can always grab the
-latest by starting the edgehub with the `-nightly` flag to pull the nightly builds of InfluxDB and
+latest by starting the idahub with the `-nightly` flag to pull the nightly builds of InfluxDB and
 Chronograf.
 
 ```bash
-./edgehub up -nightly
+./idahub up -nightly
 ```
 
 ### Flux via CLI
@@ -20,7 +20,7 @@ Integrated within the InfluxCLI is a Flux Read-Eval-Print-Loop (REPL) Command Li
 To access the Flux REPL:
 ```
 // Enter the docker container containing the InfluxCLI from the command prompt
-$ ./edgehub enter influxdb  
+$ ./idahub enter influxdb  
 
 // Once inside the container, start the InfluxCLI tool using the -type flux option
 # influx -type flux

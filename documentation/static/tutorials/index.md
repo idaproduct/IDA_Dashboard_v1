@@ -1,6 +1,6 @@
 ## Getting started
 
-+ [Understanding the edgehub](/tutorials/understanding-edgehub)
++ [Understanding the idahub](/tutorials/understanding-idahub)
 + [Getting started with Flux](/tutorials/flux-getting-started)
 + [Learning Flux](https://docs.influxdata.com/flux)
 

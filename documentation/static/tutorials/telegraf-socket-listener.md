@@ -2,7 +2,7 @@
 
 The Telegraf [socket_listener](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/socket_listener) plugin allows you to send arbitrary measurements to Telegraf using UDP or TCP. It is often the fastest way to get your metrics into InfluxDB, as it will parse various [inputs](https://docs.influxdata.com/telegraf/v1.5/concepts/data_formats_input/) and take care of things like automatic retries for you.
 
-In order to use the Telegraf socket_listener Plugin with the InfluxData edgehub, we will need to expose a port for the Telegraf container to receive data. We can do that by adding a `ports` section under `telegraf` in `./docker-compose.yml`.
+In order to use the Telegraf socket_listener Plugin with the InfluxData idahub, we will need to expose a port for the Telegraf container to receive data. We can do that by adding a `ports` section under `telegraf` in `./docker-compose.yml`.
 
 It should look like this:
 
@@ -35,10 +35,10 @@ We'll also need to configure the Telegraf plugin to receive UDP packets. Open `.
   data_format = "influx"
 ```
 
-Once you've made those changes you can apply them by restarting the edgehub:
+Once you've made those changes you can apply them by restarting the idahub:
 
 ```
-$ ./edgehub restart
+$ ./idahub restart
 Stopping all processes...
 Starting all processes...
 Services available!
@@ -63,7 +63,7 @@ The `echo` command prints the text within quotes, which in this case is data enc
 
 On Linux or WSL you can substitute `-q` for `-w 1`, which tells `nc` to quit once the data has been sent.
 
-Telegraf has the ability to aggregate and process data it receives before sending it on using an output plugin. In the edgehub, Telegraf is configured with a five second "flush" interval, which means that Telegraf will collect measurements for five seconds, aggregate them, and send the resulting value to InfluxDB. Since we have not specified the type of aggregation we'd like, Telegraf will default to computing the mean of the measurements received during the interval.
+Telegraf has the ability to aggregate and process data it receives before sending it on using an output plugin. In the idahub, Telegraf is configured with a five second "flush" interval, which means that Telegraf will collect measurements for five seconds, aggregate them, and send the resulting value to InfluxDB. Since we have not specified the type of aggregation we'd like, Telegraf will default to computing the mean of the measurements received during the interval.
 
 Now that we've sent some measurements to Telegraf, let's verify that they made their way into the InfluxDB database. Open Chronograf at [http://localhost:8888](http://localhost:8888) and navigate to the data explorer.
 

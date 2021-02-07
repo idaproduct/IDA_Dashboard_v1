@@ -8,5 +8,5 @@
   "insecureSkipVerify": false,
   "default": true,
   "telegraf": "telegraf",
-  "organization": "edgehub_org"
+  "organization": "idahub_org"
 }
