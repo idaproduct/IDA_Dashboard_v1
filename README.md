@@ -1,7 +1,5 @@
 # Industrial IoT and Data Analytics Platform (IDA)
 
-This repo is a quick way to get the entire TICK Stack spun up and working together. It uses [Docker](https://www.docker.com/) to spin up the full TICK stack in a connected fashion. This is heavily tested on MacOS and should mostly work on Linux and Windows.
-
 To get started you need a running docker installation. If you don't have one, you can download Docker for [Mac](https://www.docker.com/docker-mac) or [Windows](https://www.docker.com/docker-windows), or follow the installation instructions for Docker CE for your [Linux distribution](https://docs.docker.com/engine/installation/#server).
 
 ### Running
