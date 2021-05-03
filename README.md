@@ -5,22 +5,28 @@
 1.VTR แนะนำการใช้งาน URCONNECT
 หน่วยตรวจวัดระยะไกลยูนิเวอร์แซล
 http://bit.ly/URCONNECT_Training
+
 2.เอกสาร URCONNECT ประกอบการเรียนรู้
 http://bit.ly/URCONNECT_DOCS
+
 3.downdload โปรแกรม เพื่อตั้งค่าการใช้งาน URCONNECT ที่ https://drive.google.com/file/d/149IUYGg_x62d3wxUEbrIh0OkvESbSP2E/view?usp=sharing
+
 4.downdload โปรแกรมเพื่อ
 - เพิ่มให้สามารถ Edit ค่าในการ Calibrate ในส่วนการ 4-20mA PT100 และ 0-5V
 - เพิ่มให้การตั้งค่า Forward Address ใช้งานได้ง่ายขึ้น สามารถ Downdload Program ได้ที่ https://drive.google.com/file/d/1BhzbH-TM64o_TxEj29R2MCbX4T2IfkMj/view?usp=sharing
-การเรียนรู้ NETPIE เบื้องต้น
+
+### การเรียนรู้ NETPIE เบื้องต้น
+
 1.ดาวน์โหลดเอกสารและตัวอย่างโปรแกรมสำหรับการฝึกอบรมได้ที่ลิงค์ข้างล่างนี้
 https://bit.ly/2Wbrp6y
 NETPIE2020 Training Playlist http://bit.ly/NETPIE_PLAYLIST
 เรียนรู้การตั้งค่าอุปกรณ์ URCONNECT +Sensors +PT100
-1. VTR สาธิตการตั้งค่าอุปกรณ์ URCONNECT +Sensors +PT100
+
+2. VTR สาธิตการตั้งค่าอุปกรณ์ URCONNECT +Sensors +PT100
 ตอนที่1 Architecture IDA ฮาร์ดแวร์ และ ตัวอย่าง Gateway ได้ที่่ https://rb.gy/l2xy8y
 ตอนที่ 2 แนะนำซอฟต์แวร์ เพื่อการติดตั้งและการใช้งาน ได้ที่ https://rb.gy/oba1bf
 ตอนที่ 3 การติดตั้ง Mod-bus เพื่อสื่อสาร URCONNECT ได้ที่ https://rb.gy/eu0sic
-2. เอกสารประกอบ การสาธิตการตั้งค่าอุปกรณ์ URCONNECT +Sensors +PT100 ทุกตอนได้ที่ https://rb.gy/uf7j0t
+เอกสารประกอบ การสาธิตการตั้งค่าอุปกรณ์ URCONNECT +Sensors +PT100 ทุกตอนได้ที่ https://rb.gy/uf7j0t
 
 To get started you need a running docker installation. If you don't have one, you can download Docker for [Mac](https://www.docker.com/docker-mac) or [Windows](https://www.docker.com/docker-windows), or follow the installation instructions for Docker CE for your [Linux distribution](https://docs.docker.com/engine/installation/#server).
 
