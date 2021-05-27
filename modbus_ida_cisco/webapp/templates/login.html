@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+  <title>IDA Platform • Login</title>
+</head>
+
+{% block content %}
+<!-- login form -->
+
+<body>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+      </div>
+      <div class="col-3 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+
+        <!-- hidden-md-down -->
+        <div class="bottomdiv">
+          National Electronics and Computer Technology Center<br></div>
+        <div class="card card-block w-70">
+          <form method="POST" action="/login">
+            <div class="control-username"><br><br>
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              <div class="alert_item">
+                {{ messages[0] }}
+              </div><br><br>
+              {% endif %}
+              {% endwith %}
+              <input class="username" type="text" id="username" name="username" maxlength="20" placeholder="Username" autocomplete="off">
+              <span class="bar"></span>
+              <br><br>
+            </div>
+            <div class="control-password">
+              <input type="password" id="password" name="password" pattern=".{10,}" maxlength="20" placeholder="Password" autocomplete="off">
+              <span class="bar"></span>
+              <br><br>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="display: block; margin-left: auto; margin-right: auto;">Login</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>

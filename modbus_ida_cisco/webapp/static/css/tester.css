@@ -1,0 +1,53 @@
+.centerbox {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+.addresslist {
+  width: 20%;
+/*  margin-left: auto;
+  margin-right: auto;*/
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+.addresslist2 {
+  width: 20%;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+.topaddresslist{
+
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+  /*align-items: center;*/
+  justify-content:center;
+  display: flex;
+  padding-left: 335px;
+}
+
+.urconnect_image{
+  border: 1px;
+  border-style: solid;
+  border-color: red;
+  align-items: center;
+  justify-content:center;
+  display: flex;
+}
+
+
+.addressbot {
+  width: 25%;
+  border: 1px;
+  border-style: solid;
+  border-color: blue;
+}

@@ -1,0 +1,23 @@
+descriptor-schema-version: "2.7"
+
+info:
+  name: "modbus_iox"
+  description: "Cat say Meow :D"
+  version: "6.9.420"
+  author-link: "nectec.or.th"
+  author-name: "Tawannnnnnnn :)"
+
+app:
+  cpuarch: "aarch64"
+  type: "docker"
+  resources:
+    profile: exclusive
+    network:
+      -
+        interface-name: eth0
+        ports:
+          tcp: ["6969"]
+
+  startup:
+    rootfs: rootfs.tar
+    target: ["python","/modbus_ida/app.py"]

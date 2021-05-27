@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/components.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/tab_table.css') }}">
+  {% if request.path == url_for('index') %}
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/config.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/urconnect_popup.css') }}">
+  {% elif request.path == url_for('user') %}
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}">
+  {% elif request.path == url_for('credentials') %}
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/credentials.css') }}">
+  {% elif request.path == url_for('powermeter') %}
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/powermeter.css') }}">
+  {% endif %}
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <div class="header">
+    <a class="logo">IDA Platform</a>
+
+    <div class="header-right">
+      {% if request.path == url_for('index') %}
+      <a class="active" href={{ url_for('index') }}>Config</a>
+      {% else %}
+      <a href={{ url_for('index') }}>Config</a>
+      {% endif %}
+      {% if request.path == url_for('powermeter') %}
+      <a class="active" href={{ url_for('powermeter') }}>Power Meter</a>
+      {% else %}
+      <a href={{ url_for('powermeter') }}>Power Meter</a>
+      {% endif %}
+      {% if request.path == url_for('credentials') %}
+      <a class="active" href={{ url_for('credentials') }}>Credentials</a>
+      {% else %}
+      <a href={{ url_for('credentials') }}>Credentials</a>
+      {% endif %}
+      <a class="line">|</a>
+      {% if request.path == url_for('user') %}
+      <a class="active" href={{ url_for('user') }}>{{ name }}</a>
+      {% else %}
+      <a href={{ url_for('user') }}>{{ name }}</a>
+      {% endif %}
+      <a href={{ url_for('logout') }}>Logout</a>
+    </div>
+  </div>
+  <br><br><br>
+
+  {% block content %}
+  {% endblock %}
+
+  <div class="footer">
+    <p>Network & Security Team, IDA Platform :) - National Electronics and Computer Technology Center (NECTEC)</p>
+  </div>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+  {% if request.path == url_for('index') or request.path == url_for('index_post') %}
+  <script type=text/javascript src="{{ url_for('static', filename='js/config_validator.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/tab_table.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/hidden_pic.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/delete_confirm.js') }}"></script>
+  {% elif request.path == url_for('user') or request.path == url_for('user_post') %}
+  <script type=text/javascript src="{{ url_for('static', filename='js/tab_table.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/passwd_checker.js') }}"></script>
+  {% elif request.path == url_for('credentials') or request.path == url_for('credentials_post') %}
+  <script type=text/javascript src="{{ url_for('static', filename='js/checkbox_enabler.js') }}"></script>{% endif %}
+</body>
+
+</html>

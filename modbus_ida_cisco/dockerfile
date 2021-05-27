@@ -1,0 +1,16 @@
+FROM arm64v8/alpine:3.7
+COPY qemu-aarch64-static /usr/bin
+RUN apk add --no-cache python py-pip py-mysqldb
+RUN rm -rf /var/cache/apk/*
+COPY req/requirements.txt req/requirements.txt
+RUN pip install -r req/requirements.txt
+RUN rm -rf req
+RUN mkdir modbus_ida
+COPY cert /modbus_ida/cert
+COPY static/images /modbus_ida/static/images
+COPY static/css /modbus_ida/static/css
+COPY static/js /modbus_ida/static/js
+COPY templates /modbus_ida/templates
+COPY app_config.ini /modbus_ida/app_config.ini
+COPY app.py /modbus_ida/app.py
+COPY webapp.py /modbus_ida/webapp.py

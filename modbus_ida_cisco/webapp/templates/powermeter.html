@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}IDA Platform • Power Meter{% endblock %}
+{% block content %}
+
+<div class="header_powermeter">
+<br><br><br><h2>Power Meter <small class="text-muted" style="font-size:18px">Default Configuration</small></h2><br></div><br>
+
+<div class="box_powermeter"><br>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Starting Address</th>
+      <th>Quantity</th>
+    </tr>
+    {% for defaultrow in data %}
+    <tr>
+      <td>{{ defaultrow[0] }}</td>
+      <td>{{ defaultrow[1] }}</td>
+      <td>{{ defaultrow[2] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

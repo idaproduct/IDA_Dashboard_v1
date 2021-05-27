@@ -1,0 +1,15 @@
+{% block body %}
+{% if row[4] == "02" %}
+<option value="02">02: Read Input Status</option>
+<option value="01">01: Read Coils</option>
+<option value="04">04: Read Input Register</option>
+{% elif row[4] == "04" %}
+<option value="04">04: Read Input Register</option>
+<option value="01">01: Read Coils</option>
+<option value="02">02: Read Input Status</option>
+{% else %}
+<option value="01">01: Read Coils</option>
+<option value="02">02: Read Input Status</option>
+<option value="04">04: Read Input Register</option>
+{% endif %}
+{% endblock %}

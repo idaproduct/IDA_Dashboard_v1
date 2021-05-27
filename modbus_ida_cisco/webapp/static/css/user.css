@@ -1,0 +1,51 @@
+.box-headeruser{
+  width:80%;
+  margin: auto;
+}
+
+.password_input, .submit_password{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.password_checker{
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 25%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.password_input table{
+  width: 25%;
+}
+
+.password_input td{
+  text-align: right !important;
+  border: none !important;
+}
+
+.password_input th{
+  font-size: 20px;
+  border: none !important;
+}
+
+.textarea_log {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 500px;
+}
+
+.textarea_log textarea {
+  resize: none;
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #8a8a8a;
+}
